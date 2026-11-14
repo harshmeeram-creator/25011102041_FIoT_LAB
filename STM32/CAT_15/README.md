@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements an IoT-based weather monitoring system using the **STM32 NUCLEO-F410RB development board**, **BME280 environmental sensor**, and **Wemos ESP8266 Wi-Fi module**.
+This project implements an IoT-based weather monitoring system using the **STM32 NUCLEO-F401RE development board**, **BME280 environmental sensor**, and **Wemos ESP8266 Wi-Fi module**.
 
 The BME280 sensor measures temperature, humidity, and atmospheric pressure. The STM32 microcontroller reads the sensor data and communicates with the Wemos ESP8266 module.
 
@@ -12,7 +12,7 @@ The project also incorporates the OpenWeather API to obtain external weather inf
 
 ## Hardware Requirements
 
-- STM32 NUCLEO-F410RB Development Board
+- STM32 NUCLEO-F401RE Development Board
 - BME280 Environmental Sensor
 - Wemos D1 Mini (ESP8266 Wi-Fi Module)
 - USB Cable (ST-LINK Virtual COM Port)
@@ -41,7 +41,7 @@ The project also explores the integration of external weather information using 
 ## System Architecture
 
 1. **BME280 Sensor:** Measures temperature, humidity, and atmospheric pressure.
-2. **STM32 NUCLEO-F410RB:** Reads and processes environmental sensor measurements.
+2. **STM32 NUCLEO-F401RE:** Reads and processes environmental sensor measurements.
 3. **Wemos ESP8266:** Provides Wi-Fi connectivity for data communication.
 4. **Node-RED:** Receives and processes environmental data.
 5. **Node-RED Dashboard:** Displays sensor readings graphically.
@@ -51,7 +51,7 @@ The project also explores the integration of external weather information using 
 
 ### TASK 15A – BME280 Sensor Interfacing with STM32
 
-**Objective:** Interface the BME280 environmental sensor with the STM32 NUCLEO-F410RB board.
+**Objective:** Interface the BME280 environmental sensor with the STM32 NUCLEO-F401RE board.
 
 **Implementation:**
 
@@ -126,11 +126,11 @@ The Node-RED dashboard provides graphical representations of the environmental p
 
 ## Hardware Setup
 
-The BME280 environmental sensor is interfaced with the STM32 NUCLEO-F410RB development board. The Wemos ESP8266 module is used for Wi-Fi communication.
+The BME280 environmental sensor is interfaced with the STM32 NUCLEO-F401RE development board. The Wemos ESP8266 module is used for Wi-Fi communication.
 
 ### Hardware Components
 
-- STM32 NUCLEO-F410RB
+- STM32 NUCLEO-F401RE
 - BME280 Environmental Sensor
 - Wemos D1 Mini (ESP8266)
 - USB connection for programming and serial communication
@@ -159,7 +159,7 @@ The BME280 environmental sensor is interfaced with the STM32 NUCLEO-F410RB devel
 
 ## Conclusion
 
-The project demonstrates the development of an IoT-based weather monitoring system using the STM32 NUCLEO-F410RB development board, BME280 environmental sensor, and Wemos ESP8266 Wi-Fi module.
+The project demonstrates the development of an IoT-based weather monitoring system using the STM32 NUCLEO-F401RE development board, BME280 environmental sensor, and Wemos ESP8266 Wi-Fi module.
 
 The system acquires temperature, humidity, and atmospheric pressure readings from the BME280 sensor. The STM32 processes the measurements, while the Wemos ESP8266 provides Wi-Fi communication for the IoT monitoring workflow.
 
@@ -169,7 +169,7 @@ This project provides practical experience in embedded systems programming, sens
 
 ## Project Information
 
-- **Platform:** STM32 NUCLEO-F410RB
+- **Platform:** STM32 NUCLEO-F401RE
 - **Sensor:** BME280
 - **Wi-Fi Module:** Wemos D1 Mini (ESP8266)
 - **Programming Language:** Embedded C
