@@ -1,14 +1,24 @@
-# EXPERIMENT DETAILS
+# CAT5 – Hardware Timer and Interrupt-Based Timing
 
-**EXP:** Continuous Lab Evaluation – 5
+## EXP
+Continuous Lab Evaluation – 5
 
-**DATE:** 10/08/2026 (Week 4)
+## DATE
+10/08/2026 (Week 4)
 
-**NAME OF EXP:** Hardware Timer and Interrupt-Based Timing for LED Fading, Pulse Generation, and Stepper Motor Control
+## NAME OF EXP
+Hardware Timer and Interrupt-Based Timing for LED Fading, Pulse Generation, and Stepper Motor Control
 
-**HARDWARE SETUP / PLATFORM:** AT89S52 (8051) + 11.0592 MHz Crystal + Embedded C + Keil µVision (Keil C51) + LEDs + Oscilloscope + Optional Stepper Motor and Motor Driver
-
----
+## HARDWARE SETUP / PLATFORM
+- **Microcontroller:** AT89S52 (8051)
+- **Crystal Frequency:** 11.0592 MHz
+- **Programming Language:** Embedded C
+- **IDE / Compiler:** Keil µVision – Keil C51
+- **Hardware:** AT89S52 Development Board, LEDs, Stepper Motor (optional), Motor Driver (if used), and Oscilloscope
+- **Debugging Tool:** Multimeter
+- **Timer:** Timer 0
+- **Programming Method:** Register-level programming using hardware timer interrupts
+- **Restrictions:** No Arduino APIs, HAL libraries, or RTOS services.
 
 ## TASK NO
 
@@ -19,7 +29,6 @@
 Configure Timer 0 to generate periodic interrupts. Use the timer interrupt as a software time base to toggle an LED every 1 second without using software delay loops for timing.
 
 **Core Logic:**
-
 1. Configure Timer 0 in Mode 1 (16-bit timer mode).
 2. Load the timer registers with the required initial value.
 3. Enable Timer 0 interrupt and global interrupt.
@@ -34,8 +43,8 @@ For a classic 12-clock 8051 with an 11.0592 MHz crystal:
 - Machine cycle = 12 / 11.0592 MHz ≈ 1.085 µs
 - Timer counts for 1 ms ≈ 922
 - Timer preload = 65536 − 922 = 64614 = FC66H
-- TH0 = `0xFC`
-- TL0 = `0x66`
+- TH0 = 0xFC
+- TL0 = 0x66
 
 ### Task 2 – LED Fading Using Software PWM
 
@@ -44,7 +53,6 @@ For a classic 12-clock 8051 with an 11.0592 MHz crystal:
 Use Timer 0 interrupts to generate a software PWM signal. Gradually vary the LED duty cycle from 0% to 100% and back to 0% to produce a visible fading effect.
 
 **Core Logic:**
-
 1. Generate periodic interrupts using Timer 0.
 2. Divide each PWM period into multiple time slots.
 3. Compare the PWM counter with the duty-cycle value.
@@ -76,14 +84,12 @@ Configure a GPIO pin as an output and use timer interrupts to generate square-wa
 | Mode 5 | 5 kHz |
 
 **Additional Signal Types:**
-
 1. Square Wave
 2. Variable Duty-Cycle Wave
 3. Pulse Train
 4. Burst Signal
 
 **Core Logic:**
-
 1. Configure Timer 0 for periodic interrupts.
 2. Toggle the output pin at the required intervals.
 3. Change the timer interval or toggle count to generate different frequencies.
@@ -97,7 +103,7 @@ Use timer interrupts to generate the stepping sequence for a stepper motor. Cont
 
 **Step Sequence:**
 
-`1000 → 0100 → 0010 → 0001`
+1000 → 0100 → 0010 → 0001
 
 **Speed Modes:**
 
@@ -108,28 +114,17 @@ Use timer interrupts to generate the stepping sequence for a stepper motor. Cont
 | Fast | 10 ms |
 
 **Core Logic:**
-
 1. Configure Timer 0 to generate periodic interrupts.
 2. Maintain a software counter to track the required step interval.
 3. Generate the next step when the counter reaches the selected interval.
 4. Change the sequence order to control motor direction.
 5. Change the interval to control motor speed.
 
----
-
 ## CIRCUIT DIAGRAM
 
-**Task 1 and Task 2 – LED Timer Control and Fading**
+![Circuit Diagram](circuit.png)
 
-![LED Fading Circuit](circuit%20-%201.png)
-
-**Task 3 – Variable-Frequency Signal Generation**
-
-![Oscilloscope Circuit](circuit%20-%202.png)
-
-*Note: Task 4 is optional. Add its circuit diagram if the stepper motor hardware setup is implemented.*
-
----
+*Note: Add the actual hardware circuit diagram as `circuit.png` in this CAT5 folder. The LED, output pin, and optional motor-driver connections must match the implemented circuit.*
 
 ## CORE LOGIC / PSEUDOCODE / CODE BASE
 

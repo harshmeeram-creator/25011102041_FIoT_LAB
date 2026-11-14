@@ -48,7 +48,7 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>TASK 8A\</OutputDirectory>
+          <OutputDirectory>.\</OutputDirectory>
           <OutputName>TASK 8A</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
@@ -56,7 +56,7 @@
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath></ListingPath>
-          <HexFormatSelection>1</HexFormatSelection>
+          <HexFormatSelection>0</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>1</RunUserProg2>
+            <RunUserProg2>0</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -120,7 +120,7 @@
         </DllOption>
         <DebugOption>
           <OPTHX>
-            <HexSelection>1</HexSelection>
+            <HexSelection>0</HexSelection>
             <HexRangeLowAddress>0</HexRangeLowAddress>
             <HexRangeHighAddress>0</HexRangeHighAddress>
             <HexOffset>0</HexOffset>
