@@ -1,25 +1,14 @@
-# CAT7 – 16x2 LCD Driver Development and Dynamic Display Control
+# EXPERIMENT DETAILS
 
-## EXP
-Continuous Lab Evaluation – 7
+**EXP:** Continuous Lab Evaluation – 7
 
-## DATE
-24/08/2026 (Week 6)
+**DATE:** 24/08/2026 (Week 6)
 
-## NAME OF EXP
-16x2 LCD Driver Development and Dynamic Display Control
+**NAME OF EXP:** 16x2 LCD Driver Development and Dynamic Display Control
 
-## HARDWARE SETUP / PLATFORM
-- **Microcontroller:** AT89S52 (8051)
-- **LCD:** HD44780-compatible 16x2 Character LCD
-- **Keypad:** 4x4 Matrix Keypad
-- **Programming Language:** Embedded C
-- **IDE / Compiler:** Keil µVision – Keil C51
-- **Crystal Frequency:** 11.0592 MHz
-- **Hardware:** AT89S52 Development Board, 16x2 LCD, 4x4 Keypad
-- **Debugging Tools:** Multimeter and Digital Storage Oscilloscope (DSO)
-- **LCD Interface:** 4-bit GPIO mode
-- **Restrictions:** No Arduino APIs, HAL libraries, or RTOS services.
+**HARDWARE SETUP / PLATFORM:** AT89S52 (8051) + HD44780-compatible 16x2 Character LCD + 4x4 Matrix Keypad + Embedded C + Keil µVision (Keil C51) + 11.0592 MHz Crystal
+
+---
 
 ## TASK NO
 
@@ -30,6 +19,7 @@ Continuous Lab Evaluation – 7
 Develop a 4-bit GPIO-based LCD driver for the AT89S52 using the HD44780-compatible LCD datasheet. Initialize the 16x2 LCD in 4-bit, 2-line mode and display individual characters and strings on both rows.
 
 **Core Logic:**
+
 1. Configure the LCD control and data pins.
 2. Initialize the LCD in 4-bit mode.
 3. Configure the LCD for 2-line display and 5x8 character font.
@@ -39,6 +29,7 @@ Develop a 4-bit GPIO-based LCD driver for the AT89S52 using the HD44780-compatib
 7. Display individual characters and strings on both rows.
 
 **Required Functions:**
+
 - `lcd_init()`
 - `lcd_cmd()`
 - `lcd_data()`
@@ -50,6 +41,7 @@ Develop a 4-bit GPIO-based LCD driver for the AT89S52 using the HD44780-compatib
 Develop LCD cursor-positioning and data-update functions to display strings and numerical values at specified positions on the 16x2 LCD.
 
 **Core Logic:**
+
 1. Select the required LCD row and column.
 2. Set the cursor position using the corresponding DDRAM address.
 3. Display strings using the LCD string function.
@@ -57,6 +49,7 @@ Develop LCD cursor-positioning and data-update functions to display strings and 
 5. Update the displayed values dynamically.
 
 **Required Functions:**
+
 - `lcd_goto(row, column)`
 - `lcd_puts(string)`
 - `lcd_print_number(value)`
@@ -75,56 +68,4 @@ Develop an interactive LCD application in which a character moves across the 16x
 | 2 | Move Down |
 | + | Move Left |
 | - | Move Right |
-| Q | Search |
-| H | Hints |
-
-**Core Logic:**
-1. Initialize the LCD and keypad.
-2. Display a character at the initial LCD position.
-3. Scan the keypad to detect a key press.
-4. Identify the pressed key.
-5. Update the character position according to the assigned key.
-6. Clear the previous character position.
-7. Display the character at the new position.
-8. Repeat the process to allow continuous interaction.
-
-## CIRCUIT DIAGRAM
-
-![Circuit Diagram](circuit.png)
-
-**LCD Interface:**
-- RS – Register Select
-- RW – Read/Write
-- E – Enable
-- D4–D7 – 4-bit data lines
-- VCC and GND – Power supply
-- V0 – Contrast adjustment
-
-*Note: Add the actual LCD and keypad circuit diagram as `circuit.png`. The pin connections must match the source code and board schematic.*
-
-## CORE LOGIC / PSEUDOCODE / CODE BASE
-
-**General Pseudocode:**
-
-1. Initialize the required GPIO pins.
-2. Initialize the LCD using the HD44780 command sequence.
-3. Configure the LCD for 4-bit, 2-line operation.
-4. Display the required characters and strings.
-5. Position the cursor using the DDRAM address.
-6. Read numerical values and update the display.
-7. For keypad control:
-   - Scan the keypad.
-   - Identify the pressed key.
-   - Update the character position.
-   - Display the character at the new position.
-8. Repeat the required display operations.
-
-**Code Base:**
-
-- `cat7_task7A_lcd.c`
-- `cat7_task7B_lcd_cursor.c`
-- `cat7_task7C_keypad_lcd.c`
-
-## INFERENCE
-
-The experiment demonstrates the development of a low-level 4-bit LCD driver using the AT89S52 microcontroller. The HD44780-compatible LCD is initialized using the required command sequence to display characters and strings. Cursor positioning and dynamic numerical updates are implemented using LCD functions. The 4x4 keypad is used to control character movement on the LCD. This experiment provides practical understanding of peripheral datasheets, GPIO interfacing, LCD commands, and embedded C programming.
+| Q |

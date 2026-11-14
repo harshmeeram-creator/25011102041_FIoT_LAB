@@ -1,45 +1,89 @@
-# CAT 09 – STM32 UART Communication
+# EXPERIMENT DETAILS
 
-## Overview
-This folder contains experiments demonstrating UART communication between the STM32 Blue Pill and a computer, followed by command-based LED control.
+**EXP:** Continuous Lab Evaluation – 9
 
-## Hardware and Software
-- STM32 Blue Pill (STM32F103C8T6)
-- USB-to-TTL converter
-- LED
-- STM32CubeMX
-- Keil MDK-ARM
-- PuTTY
-- STM32 HAL Library
+**NAME OF EXP:** STM32 UART Communication
 
-## TASK A – UART Communication
+**HARDWARE SETUP / PLATFORM:** STM32 Blue Pill (STM32F103C8T6) + USB-to-TTL Converter + LED + STM32CubeMX + Keil MDK-ARM + PuTTY + STM32 HAL Library
 
-**Objective:** Establish serial communication between the STM32 and a computer using UART.
+---
 
-**Implementation:**
-- Configured UART communication.
-- Transmitted messages from STM32 to the computer.
-- Received data from the computer through UART.
-- Implemented echo functionality to transmit received data back.
+## TASK NO
 
-**Observation:** UART transmission and reception were demonstrated using a serial terminal.
+### Task A – UART Communication
 
-## TASK B – String-Based LED Control
+**Objective:**
 
-**Objective:** Control an LED using commands received through UART.
+Establish serial communication between the STM32 and a computer using UART.
 
 **Implementation:**
-- Received command data through UART.
-- Processed the received string.
-- Controlled the LED based on the received command.
 
-**Observation:** The LED responded to the commands received through the serial terminal.
+1. Configure UART communication using STM32CubeMX.
+2. Initialize UART using STM32 HAL functions.
+3. Transmit messages from the STM32 to the computer.
+4. Receive data from the computer through UART.
+5. Implement echo functionality to transmit received data back.
 
-## Tools Used
-- STM32CubeMX
-- Keil MDK-ARM
-- PuTTY
-- STM32 HAL Library
+**Observation:**
 
-## Conclusion
-The experiments demonstrated UART transmission, reception, echo communication, and command-based LED control using the STM32 Blue Pill.
+UART transmission and reception were demonstrated successfully using a serial terminal.
+
+### Task B – String-Based LED Control
+
+**Objective:**
+
+Control an LED using commands received through UART.
+
+**Implementation:**
+
+1. Receive command data through UART.
+2. Process the received string.
+3. Identify the received command.
+4. Control the LED connected to PC13 based on the received command.
+
+**Observation:**
+
+The LED responded to the commands received through the serial terminal.
+
+---
+
+## CIRCUIT DIAGRAM
+
+**Task A – UART Communication**
+
+![UART Circuit Diagram](circuit%20-%201.png)
+
+**Task B – UART-Based LED Control**
+
+![UART and LED Circuit Diagram](circuit%20-%202.png)
+
+---
+
+## CORE LOGIC / PSEUDOCODE / CODE BASE
+
+**Core Logic:**
+
+- Configure and initialize UART communication.
+- Transmit messages from STM32 to the computer.
+- Receive characters or strings through UART.
+- For Task A, echo the received data back to the terminal.
+- For Task B, process the received command and control the PC13 LED.
+
+**General Pseudocode:**
+
+1. Initialize GPIO and UART peripherals.
+2. Start UART communication.
+3. Transmit the required message.
+4. Receive data from the serial terminal.
+5. For Task A, transmit the received data back.
+6. For Task B, compare the received command.
+7. Control the LED according to the command.
+8. Repeat the communication process.
+
+**Code Base:**
+
+Separate task implementations are maintained in their respective task folders.
+
+## INFERENCE
+
+The experiment demonstrates UART transmission, reception, and echo communication using the STM32 Blue Pill. UART-based string commands are also used to control an LED connected to PC13. The experiment provides practical understanding of serial communication, UART configuration, and command-based GPIO control using STM32 HAL libraries.

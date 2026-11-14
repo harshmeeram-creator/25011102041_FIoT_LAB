@@ -1,27 +1,14 @@
-# CAT6 – UART Driver and Serial Debugging
+# EXPERIMENT DETAILS
 
-## EXP
-Continuous Lab Evaluation – 6
+**EXP:** Continuous Lab Evaluation – 6
 
-## DATE
-17/08/2026 (Week 5)
+**DATE:** 17/08/2026 (Week 5)
 
-## NAME OF EXP
-UART Driver and Serial Debugging
+**NAME OF EXP:** UART Driver and Serial Debugging
 
-## HARDWARE SETUP / PLATFORM
-- **Microcontroller:** AT89S52 (8051)
-- **Crystal Frequency:** 11.0592 MHz
-- **Programming Language:** Embedded C
-- **IDE / Compiler:** Keil µVision – Keil C51
-- **Hardware:** AT89S52 Development Board, USB-to-TTL Serial Converter, PC
-- **Serial Terminal:** PuTTY
-- **UART Communication:** 9600 Baud, 8 Data Bits, No Parity, 1 Stop Bit (9600-8-N-1)
-- **UART Pins:**
-  - TXD – P3.1
-  - RXD – P3.0
-- **Baud Rate Generation:** Timer 1, Mode 2 (8-bit auto-reload)
-- **Restrictions:** No Arduino APIs, HAL libraries, or RTOS services.
+**HARDWARE SETUP / PLATFORM:** AT89S52 (8051) + 11.0592 MHz Crystal + Embedded C + Keil µVision (Keil C51) + USB-to-TTL Serial Converter + PC + PuTTY
+
+---
 
 ## TASK NO
 
@@ -32,6 +19,7 @@ UART Driver and Serial Debugging
 Configure the AT89S52 UART for 8-bit asynchronous serial communication at 9600 baud, with 1 stop bit and no parity. Continuously transmit the message "Hello from 8051" to a PC terminal using PuTTY through a USB-to-TTL serial converter.
 
 **Core Logic:**
+
 1. Configure Timer 1 in Mode 2 for baud-rate generation.
 2. Load TH1 with the required reload value.
 3. Configure SCON for UART Mode 1 and enable reception.
@@ -50,7 +38,7 @@ Configure the AT89S52 UART for 8-bit asynchronous serial communication at 9600 b
 | Stop Bits | 1 |
 | Parity | None |
 | Timer | Timer 1, Mode 2 |
-| TH1 | 0xFD |
+| TH1 | `0xFD` |
 
 ### Task B – UART Echo Using Character Reception
 
@@ -69,6 +57,7 @@ The terminal should display:
 `ABC123`
 
 **Core Logic:**
+
 1. Initialize UART communication at 9600 baud.
 2. Enable UART reception.
 3. Wait for a character to arrive from PuTTY.
@@ -96,11 +85,15 @@ For an AT89S52 with an 11.0592 MHz crystal, using Timer 1 Mode 2 and UART Mode 1
 
 - Crystal frequency = 11.0592 MHz
 - Required baud rate = 9600
-- Timer 1 reload value = 0xFD
+- Timer 1 reload value = `0xFD`
+
+---
 
 ## CIRCUIT DIAGRAM
 
-![Circuit Diagram](circuit.png)
+The same UART circuit is used for both Task A and Task B.
+
+![UART Circuit Diagram](circuit.png)
 
 **UART Connections:**
 
@@ -111,6 +104,8 @@ For an AT89S52 with an 11.0592 MHz crystal, using Timer 1 Mode 2 and UART Mode 1
 | GND | GND |
 
 *Note: Use the actual board schematic and USB-to-TTL converter voltage requirements when preparing the circuit diagram.*
+
+---
 
 ## CORE LOGIC / PSEUDOCODE / CODE BASE
 
